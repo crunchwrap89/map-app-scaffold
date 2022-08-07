@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "vue.volar",
+    "vue.vscode-typescript-vue-plugin",
+    "csstools.postcss",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "antfu.icons-carbon",
+    "kisstkondoros.vscode-gutter-preview",
+    "oderwat.indent-rainbow",
+    "visualstudioexptteam.vscodeintellicode",
+    "pkief.material-icon-theme",
+    "monokai.theme-monokai-pro-vscode",
+    "eg2.vscode-npm-script",
+    "christian-kohler.npm-intellisense",
+    "alefragnani.project-manager",
+    "ms-vscode-remote.remote-containers",
+    "humao.rest-client",
+    "gruntfuggly.todo-tree",
+    "ChakrounAnas.turbo-console-log"
+  ]
+}
