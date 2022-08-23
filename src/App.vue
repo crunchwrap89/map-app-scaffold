@@ -15,7 +15,10 @@ import LoadingScreen from "./components/LoadingScreen.vue";
   </Suspense>
 </template>
 
-<style src="./assets/base.css"></style>
+<style>
+@import "@/assets/base.css";
+</style>
+
 <style scoped>
 #map-mount,
 #map-loading-screen {

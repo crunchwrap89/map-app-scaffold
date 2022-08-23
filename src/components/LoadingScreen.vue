@@ -21,12 +21,8 @@ const store = useLoadingStore();
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background: radial-gradient(
-    circle,
-    rgba(255, 231, 180, 1) 0%,
-    rgba(160, 211, 212, 1) 100%
-  );
+  color: var(--white);
+  background: var(--gradient-2);
   &__middle {
     width: 200px;
   }
@@ -43,24 +39,24 @@ progress {
   width: 200px;
   border-radius: 4px;
   height: 22px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow-1);
 }
 progress::-webkit-progress-bar {
-  background-color: rgb(66, 230, 139);
+  background-color: var(--cta-green);
   border-radius: 4px;
 }
 progress::-webkit-progress-value {
-  background-color: rgb(112, 228, 248);
+  background-color: var(--blue);
   border-radius: 4px;
-  box-shadow: 1px 1px 5px 3px rgba(207, 207, 207, 0.8);
+  box-shadow: var(--box-shadow-2);
 }
 progress::-moz-progress-bar {
-  background-color: rgb(66, 230, 139);
+  background-color: var(--cta-green);
   border-radius: 4px;
 }
 progress::-moz-progress-value {
-  background-color: rgb(112, 228, 248);
+  background-color: var(--blue);
   border-radius: 4px;
-  box-shadow: 1px 1px 5px 3px rgba(207, 207, 207, 0.8);
+  box-shadow: var(--box-shadow-2);
 }
 </style>

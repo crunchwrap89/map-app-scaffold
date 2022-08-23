@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { useInitMap } from "@/composables/useInitMap";
-import { tilesLoaded } from "@/utils/miscUtils";
+import { initMap } from "@/utils/mapUtils";
+import { tilesLoaded } from "@/utils/mapUtils";
 
-const { initMap } = useInitMap();
-const map = await initMap();
+const map = await initMap("map-mount");
 await tilesLoaded(map);
 </script>
 
