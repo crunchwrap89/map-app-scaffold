@@ -11,7 +11,8 @@ export const MAP_SETTINGS = {
   heading: 0,
   zoom: 4,
   center: {
-    lat: 0, lng: 0
+    lat: 0,
+    lng: 0,
   },
   restriction: {
     latLngBounds: { north: 85, south: -85, west: -180, east: 180 },

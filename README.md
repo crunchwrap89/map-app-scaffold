@@ -1,7 +1,7 @@
 # New Vue 3 Map Application
 
 Scaffolding template for a new Vue 3 Map Application with google maps platform.
-Latest version of Vue, Vite, Typescript, Pinia, PostCSS Plugins, @googlemaps/js-api-loader and Three.js.
+Latest version of Vue, Vite, Typescript, Pinia, PostCSS Plugins and @googlemaps/js-api-loader.
 Created by Marcus N @ Wintergarde Development AB.
 
 

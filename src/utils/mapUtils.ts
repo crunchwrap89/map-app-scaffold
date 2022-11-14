@@ -1,9 +1,5 @@
-import { MathUtils, Vector3 } from "three";
 import { Loader } from "@googlemaps/js-api-loader";
-import {
-  API_SETTINGS,
-  MAP_SETTINGS,
-} from "@/constants/mapConfig";
+import { API_SETTINGS, MAP_SETTINGS } from "@/constants/mapConfig";
 
 //init Map
 export async function initMap(elementId: string) {
@@ -32,7 +28,10 @@ export function tilesLoaded(
 }
 
 //Create random lat/long coordinates in a specified radius around a center point
-export function randomGeo(center: any, radius: number) {
+export function randomGeo(
+  center: { latitude: number; longitude: number },
+  radius: number
+) {
   const y0 = center.latitude;
   const x0 = center.longitude;
   const rd = radius / 111300; //about 111300 meters in one degree
@@ -72,7 +71,12 @@ export function randomGeo(center: any, radius: number) {
 }
 
 //Calc the distance between 2 coordinates as the crow flies
-export function distance(lat1: any, lon1: any, lat2: any, lon2: any) {
+export function distance(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+) {
   const R = 6371000;
   const a =
     0.5 -
@@ -86,7 +90,7 @@ export function distance(lat1: any, lon1: any, lat2: any, lon2: any) {
 
 //Generate a number of mappoints
 export function generateMapPoints(
-  centerpoint: any,
+  centerpoint: { latitude: number; longitude: number },
   distance: number,
   amount: number
 ) {
@@ -97,40 +101,9 @@ export function generateMapPoints(
   return mappoints;
 }
 
-export function toLatLngLiteral(latLng: any) {
+export function toLatLngLiteral(latLng: { lat: number; lng: number }) {
   if (window.google && google.maps && latLng instanceof google.maps.LatLng) {
     return latLng.toJSON();
   }
   return latLng;
-}
-
-export function latLngToMeters(latLng: any) {
-  const EARTH_RADIUS = 6371010;
-  latLng = toLatLngLiteral(latLng);
-  const x = EARTH_RADIUS * MathUtils.degToRad(latLng.lng);
-  const y =
-    0 -
-    EARTH_RADIUS *
-      Math.log(
-        Math.tan(0.5 * (Math.PI * 0.5 - MathUtils.degToRad(latLng.lat)))
-      );
-  return { x, y };
-}
-
-export function latLngToVector3(point: any, target = new Vector3()) {
-  const { x, y } = latLngToMeters(point);
-  return target.set(x, 0, -y);
-}
-
-export function latLngToVector3Relative(
-  point: any,
-  reference: any,
-  target = new Vector3()
-) {
-  const p = latLngToVector3(point);
-  const r = latLngToVector3(reference);
-  target.setX(Math.abs(r.x - p.x) * Math.sign(p.x - r.x));
-  target.setY(Math.abs(r.y - p.y) * Math.sign(p.y - r.y));
-  target.setZ(Math.abs(r.z - p.z) * Math.sign(p.z - r.z));
-  return target;
 }

@@ -150,25 +150,3 @@ html, body {
   opacity: 0;
 }
 
-#map-mount,
-#map-loading-screen {
-  position: absolute;
-  height: auto;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  border: none;
-  min-height: 100%;
-  text-rendering: optimizeLegibility;
-  user-select: none;
-  touch-action: none;
-  overflow: hidden;
-}
-
-#map-mount {
-  z-index: 10;
-}
-
-#map-loading-screen {
-  z-index: 30;
-}
